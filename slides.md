@@ -6,7 +6,7 @@ Originally by Kyle Harrington and Zhuowen (Kevin) Zhao
 
 ---
 
-## What is album?
+### What is album?
 
 `Scientific software should be shared early, quickly, and simply.`
 
@@ -22,7 +22,7 @@ More info [on the web](https://album.solutions/)
 
 ---
 
-## When to use album?
+### When to use album?
 
 - Best effort FAIR software.
 - Early development when developer overhead needs to be minimized but
@@ -33,19 +33,26 @@ More info [on the web](https://album.solutions/)
 
 ---
 
-## When not to use album?
+### When not to use album?
 
 - Album is not meant to replace conda, pypi, homebrew, chocolatey,
   yum, apt, etc..
 - Album is not meant to be the only vehicle for distributing
   commercial-grade software.
-- 
+- When you're done developing your software with album, you might not need it anymore!
 
 More info [on the web](https://album.solutions/)
 
 ---
 
-## Installation strategies
+### This Tutorial
+
+- This tutorial is focused on album usage in the context of
+  cryo-electron tomography, with a particular focus on [copick](https://copick.github.io/copick/)
+
+---
+
+### Album installation strategies
 
 Option 1: [Graphical install for Album GUI](https://docs.album.solutions/en/latest/installation-instructions.html#automated-installation-with-album-installation-wizard)  
 Option 2: Command line install ([official instructions](https://docs.album.solutions/en/latest/installation-instructions.html#manual-installation))
@@ -54,13 +61,13 @@ These slides follow option 2.
 
 ---
 
-## Step 1: Install micromamba
+### Step 1: Install micromamba
 
 Install micromamba according to [these instructions](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html)
 
 ---
 
-## Step 2: Create your Album Environment
+### Step 2: Create your Album Environment
 
 ```sh
 # Make the environment and install album
@@ -71,7 +78,7 @@ micromamba activate album-env
 
 ---
 
-## Step 3: Add the copick album catalog
+### Step 3: Add the copick album catalog
 
 You can browse the copick catalog [here](https://copick.github.io/copick-catalog/catalog)
 
@@ -85,7 +92,7 @@ album upgrade
 
 ---
 
-## Step 4: Install and Run a Solution
+### Step 4: Install and Run a Solution
 
 ```sh
 album install copick:setup_local_project:0.14.0
@@ -94,7 +101,7 @@ album run copick:setup_local_project:0.14.0
 
 ---
 
-## Catalogs
+### Catalogs
 
 Explore other catalogs:
 
@@ -107,10 +114,10 @@ Explore other catalogs:
 
 ---
 
-## More Resources
+### More Resources
 
 - Visit the [Album Documentation](https://docs.album.solutions) for more
 information.
-- Chat with album devs on image.sc zulip
-- Browse the album source on Gitlab
-
+- Check out the [copick album tutorial](https://copick.github.io/copick/examples/tutorials/album/)
+- Chat with album devs on [image.sc zulip](https://imagesc.zulipchat.com/)
+- Browse the album source on [Gitlab](https://gitlab.com/album-app/album)
