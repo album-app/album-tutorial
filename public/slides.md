@@ -9,3 +9,7 @@ This tutorial will guide you through setting up Album on your machine.
 ```sh
 pip install album
 ```
+
+## Step 2: Profit
+
+Yes
