@@ -6,6 +6,12 @@ Originally by Kyle Harrington and Zhuowen (Kevin) Zhao
 
 ---
 
+## What is album?
+
+[On the web](https://album.solutions/)
+
+---
+
 ## Installation strategies
 
 Option 1: [Graphical install for Album GUI](https://docs.album.solutions/en/latest/installation-instructions.html#automated-installation-with-album-installation-wizard)  
@@ -34,6 +40,8 @@ micromamba activate album-env
 
 ## Step 3: Add the copick album catalog
 
+You can browse the copick catalog [here](https://copick.github.io/copick-catalog/catalog)
+
 ```sh
 # Add the album catalog
 album add catalog https://github.com/copick/copick-catalog
@@ -53,6 +61,23 @@ album run copick:setup_local_project:0.14.0
 
 ---
 
+## Catalogs
+
+Explore other catalogs:
+
+- [copick](https://copick.github.io/copick-catalog/catalog)
+- [cellcanvas](https://album.cellcanvas.org/catalog)
+- [Kyle's cold storage](https://cold-storage.kyleharrington.com/catalog)
+- [Helmholtz Imaging
+  catalog](https://album-app.gitlab.io/catalogs/helmholtz-imaging/catalog)
+- [Image Challenges](https://album-app.gitlab.io/catalogs/image-challenges/catalog)
+
+---
+
 ## More Resources
 
-Visit the [Album Documentation](https://docs.album.solutions) for more information.
+- Visit the [Album Documentation](https://docs.album.solutions) for more
+information.
+- Chat with album devs on image.sc zulip
+- Browse the album source on Gitlab
+
