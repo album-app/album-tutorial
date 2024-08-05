@@ -1,6 +1,8 @@
-# Welcome to Album Setup Tutorial
+# Welcome to the Album Setup Tutorial
 
 This tutorial will guide you through setting up Album on your machine.
+
+Originally by Kyle Harrington and Zhuowen (Kevin) Zhao
 
 ---
 
@@ -19,34 +21,30 @@ Install micromamba according to [these instructions](https://mamba.readthedocs.i
 
 ---
 
-## Step 2: Create and Activate an Album Environment with micromamba
+## Step 2: Create your Album Environment
 
 ```sh
-micromamba create -n album-env
+# Make the environment and install album
+micromamba create -n album-env -c conda-forge album
+# Activate the environment
 micromamba activate album-env
 ```
 
 ---
 
-## Step 3: Install Dependencies
+## Step 3: Add the copick album catalog
 
 ```sh
-micromamba install -c conda-forge album
-```
-
----
-
-## Step 4: Add the copick album catalog
-
-```sh
+# Add the album catalog
 album add catalog https://github.com/copick/copick-catalog
+# Update the index and download listing of solutions from catalog
 album update
 album upgrade
 ```
 
 ---
 
-## Step 5: Install and Run a Solution
+## Step 4: Install and Run a Solution
 
 ```sh
 album install copick:setup_local_project:0.14.0
