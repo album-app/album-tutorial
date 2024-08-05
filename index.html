@@ -10,7 +10,52 @@
 <body>
     <div class="reveal">
         <div class="slides">
+            <!-- Section to load Markdown content -->
             <section data-markdown="slides.md" data-separator="^---$" data-separator-vertical="^--$">
+                <textarea data-template>
+                    <!-- Fallback content in case Markdown fails to load -->
+                    # Welcome to Album Setup Tutorial
+
+                    This tutorial will guide you through setting up Album on your machine.
+
+                    ---
+
+                    ## Step 1: Install Dependencies
+
+                    ```sh
+                    pip install album
+                    ```
+
+                    ---
+
+                    ## Step 2: Initialize Album Catalog
+
+                    ```sh
+                    album initialize catalog-name
+                    ```
+
+                    ---
+
+                    ## Step 3: Create Your First Solution
+
+                    ```sh
+                    album create solution solution-name
+                    ```
+
+                    ---
+
+                    ## Step 4: Run the Solution
+
+                    ```sh
+                    album run solution-name
+                    ```
+
+                    ---
+
+                    ## More Resources
+
+                    Visit the [Album Documentation](https://album.readthedocs.io/) for more information.
+                </textarea>
             </section>
         </div>
     </div>
