@@ -59,13 +59,13 @@ Option 2: Command line install ([official instructions](https://docs.album.solut
 
 These slides follow option 2.
 
----
+--
 
 ### Step 1: Install micromamba
 
 Install micromamba according to [these instructions](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html)
 
----
+--
 
 ### Step 2: Create your Album Environment
 
@@ -76,7 +76,7 @@ micromamba create -n album-env -c conda-forge album
 micromamba activate album-env
 ```
 
----
+--
 
 ### Step 3: Add the copick album catalog
 
@@ -90,7 +90,7 @@ album update
 album upgrade
 ```
 
----
+--
 
 ### Step 4: Install and Run a Solution
 
