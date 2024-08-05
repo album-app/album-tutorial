@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/kephale/album-tutorial#readme",
   "dependencies": {
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
     "reveal.js": "^5.1.0"
   }
 }
