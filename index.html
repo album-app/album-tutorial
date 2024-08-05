@@ -11,30 +11,13 @@
 <body>
     <div class="reveal">
         <div class="slides">
-            <section data-markdown="index.md" data-separator="^---$" data-separator-vertical="^--$" data-preprocessor="preprocess.js">
+            <section data-markdown="index.md" data-separator="^---$" data-separator-vertical="^--$" id="markdown-section">
             </section>
         </div>
     </div>
 
     <script src="js/reveal.js"></script>
-    <script src="plugin/markdown/marked.js"></script>
     <script src="plugin/markdown/markdown.js"></script>
-    <script>
-        const loadPreprocessor = async (file) => {
-            const module = await import(`./${file}`);
-            return module.default || module;
-        };
-
-        Reveal.initialize({
-            plugins: [ RevealMarkdown ],
-            markdown: {
-                smartypants: true,
-                preprocess: async (markdown) => {
-                    const preprocessor = await loadPreprocessor('js/preprocess.js');
-                    return preprocessor(markdown, { initialDir: '.' });
-                }
-            }
-        });
-    </script>
+    <script src="js/loadMarkdown.js"></script>
 </body>
 </html>
