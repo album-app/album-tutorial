@@ -1,0 +1,38 @@
+.reveal {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.reveal .slides section {
+    padding: 40px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.reveal h1, .reveal h2, .reveal h3 {
+    color: #ff4081;
+}
+
+.reveal h1 {
+    font-size: 2.5em;
+}
+
+.reveal h2 {
+    font-size: 2em;
+}
+
+.reveal h3 {
+    font-size: 1.75em;
+}
+
+.reveal p, .reveal li {
+    font-size: 1.25em;
+}
+
+.reveal pre code {
+    background: #333;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 10px;
+    color: #ff4081;
+}

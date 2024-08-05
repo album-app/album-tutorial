@@ -1,4 +1,4 @@
-# Welcome to the Album Setup Tutorial
+## Welcome to the Album Setup Tutorial
 
 This tutorial will guide you through setting up Album on your machine.
 
