@@ -8,7 +8,7 @@
 
 More info [on the web](https://album.solutions/)
 
----
+--
 
 ### When to use album?
 
@@ -18,7 +18,7 @@ More info [on the web](https://album.solutions/)
 
 More info [on the web](https://album.solutions/)
 
----
+--
 
 ### When not to use album?
 
