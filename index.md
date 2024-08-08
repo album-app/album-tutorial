@@ -8,12 +8,6 @@ FILE: overview.md
 
 ---
 
-### This Tutorial
-
-- This tutorial is focused on album usage in the context of cryo-electron tomography, with a particular focus on [copick](https://copick.github.io/copick/)
-
----
-
 FILE: installation.md
 
 ---

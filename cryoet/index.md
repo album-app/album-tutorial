@@ -10,10 +10,6 @@ CZ Imaging Institute
 
 ---
 
-FILE: ../overview.md
-
----
-
 FILE: overview.md
 
 ---
