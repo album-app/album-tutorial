@@ -2,8 +2,6 @@
 
 This tutorial will guide you through setting up Album on your machine.
 
-Originally by Kyle Harrington and Zhuowen (Kevin) Zhao
-
 ---
 
 FILE: overview.md
@@ -17,6 +15,10 @@ FILE: overview.md
 ---
 
 FILE: installation.md
+
+---
+
+FILE: tutorials.md
 
 ---
 
