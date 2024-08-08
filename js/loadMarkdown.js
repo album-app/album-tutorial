@@ -73,34 +73,46 @@ const initMarkdown = async () => {
     }
     const markdownFile = markdownSection.getAttribute('markdown');
     
+    console.log('Loading markdown file:', markdownFile);
     const rawMarkdown = await loadMarkdownFile(markdownFile, { initialDir: '.' });
-    if (!rawMarkdown) return;
+    if (!rawMarkdown) {
+        console.error('Failed to load markdown file');
+        return;
+    }
 
+    console.log('Processing markdown');
     const processedMarkdown = await processMarkdown(rawMarkdown, { initialDir: '.' });
 
-    // Clear existing content
+    console.log('Clearing existing content');
     markdownSection.innerHTML = '';
 
-    // Split into vertical sections
+    console.log('Splitting into vertical sections');
     const verticalSections = processedMarkdown.split(/^---$/m);
+    console.log('Number of vertical sections:', verticalSections.length);
     
-    verticalSections.forEach(verticalSection => {
+    verticalSections.forEach((verticalSection, index) => {
+        console.log(`Processing vertical section ${index + 1}`);
         const horizontalSlides = verticalSection.split(/^--$/m);
+        console.log(`Number of horizontal slides in section ${index + 1}:`, horizontalSlides.length);
         const verticalSlideSection = document.createElement('section');
         
-        horizontalSlides.forEach(slideContent => {
+        horizontalSlides.forEach((slideContent, slideIndex) => {
+            console.log(`Creating slide ${slideIndex + 1} in section ${index + 1}`);
             verticalSlideSection.appendChild(createSlideSection(slideContent.trim()));
         });
         
         markdownSection.appendChild(verticalSlideSection);
     });
 
+    console.log('Initializing Reveal.js');
     Reveal.initialize({
         plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
         markdown: {
             smartypants: true
         }
     });
+
+    console.log('Reveal.js initialization complete');
 };
 
 document.addEventListener('DOMContentLoaded', initMarkdown);
