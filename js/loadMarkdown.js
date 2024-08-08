@@ -60,10 +60,7 @@ const createSlideSection = (content) => {
     section.setAttribute('data-markdown', '');
     section.style.minHeight = '100px';
     section.style.border = '1px solid red';
-    const script = document.createElement('script');
-    script.setAttribute('type', 'text/template');
-    script.textContent = content || 'Default Slide Content';
-    section.appendChild(script);
+    section.innerHTML = content || 'Default Slide Content';
     return section;
 };
 
@@ -97,12 +94,13 @@ const initMarkdown = async () => {
         const horizontalSlides = verticalSection.split(/^--$/m);
         console.log(`Number of horizontal slides in section ${index + 1}:`, horizontalSlides.length);
         const verticalSlideSection = document.createElement('section');
-        
+
         horizontalSlides.forEach((slideContent, slideIndex) => {
             console.log(`Creating slide ${slideIndex + 1} in section ${index + 1}`);
+            console.log(`Slide content: ${slideContent.substring(0, 100)}...`); // Log the first 100 characters of each slide
             verticalSlideSection.appendChild(createSlideSection(slideContent.trim()));
         });
-        
+
         markdownSection.appendChild(verticalSlideSection);
     });
 
@@ -117,15 +115,21 @@ const initMarkdown = async () => {
         margin: 0,
         minScale: 1,
         maxScale: 1
+    }).then(() => {
+        return Reveal.getPlugins().markdown.processSlides(document.querySelectorAll('.slides section'));
+    }).then(() => {
+        Reveal.layout();
+        console.log('Reveal.js layout updated and markdown processed');
     });
 
-    // Force Reveal.js to update its layout
-    setTimeout(() => {
-        Reveal.layout();
-        console.log('Reveal.js layout updated');
-    }, 1000);
-
     console.log('Reveal.js initialization complete');
+
+    setTimeout(() => {
+        const slides = document.querySelectorAll('.slides section');
+        slides.forEach((slide, index) => {
+            console.log(`Slide ${index + 1} processed content:`, slide.innerHTML.substring(0, 100));
+        });
+    }, 2000);
 
 };
 
