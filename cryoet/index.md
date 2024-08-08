@@ -2,7 +2,7 @@
 
 This tutorial will guide you through setting up Album on your machine.
 
-<add a cryoET picture>
+`<add a cryoET picture>`
 
 August 14, 2024  
 Kyle Harrington and Zhuowen (Kevin) Zhao  
@@ -10,16 +10,16 @@ CZ Imaging Institute
 
 ---
 
+FILE: ../overview.md
+
+---
+
 FILE: overview.md
 
 ---
 
-FILE: cryoet/catalogs.md
+FILE: ../installation.md
 
 ---
 
-FILE: installation.md
-
----
-
-FILE: resources.md
+FILE: ../resources.md
