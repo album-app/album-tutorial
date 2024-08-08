@@ -23,3 +23,13 @@
 .reveal pre code {
     font-size: 0.9em; /* Adjusted size */
 }
+
+/* Add this to ensure slides are visible */
+.reveal .slides section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid blue; /* This is for debugging, remove after fixing */
+}

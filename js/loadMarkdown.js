@@ -58,9 +58,11 @@ const processMarkdown = async (markdown, options) => {
 const createSlideSection = (content) => {
     const section = document.createElement('section');
     section.setAttribute('data-markdown', '');
+    section.style.minHeight = '100px';
+    section.style.border = '1px solid red';
     const script = document.createElement('script');
     script.setAttribute('type', 'text/template');
-    script.textContent = content;
+    script.textContent = content || 'Default Slide Content';
     section.appendChild(script);
     return section;
 };
@@ -109,10 +111,22 @@ const initMarkdown = async () => {
         plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
         markdown: {
             smartypants: true
-        }
+        },
+        width: '100%',
+        height: '100%',
+        margin: 0,
+        minScale: 1,
+        maxScale: 1
     });
 
+    // Force Reveal.js to update its layout
+    setTimeout(() => {
+        Reveal.layout();
+        console.log('Reveal.js layout updated');
+    }, 1000);
+
     console.log('Reveal.js initialization complete');
+
 };
 
 document.addEventListener('DOMContentLoaded', initMarkdown);
