@@ -58,8 +58,6 @@ const processMarkdown = async (markdown, options) => {
 const createSlideSection = (content) => {
     const section = document.createElement('section');
     section.setAttribute('data-markdown', '');
-    section.style.minHeight = '100px';
-    section.style.border = '1px solid red';
     const textarea = document.createElement('textarea');
     textarea.setAttribute('data-template', '');
     textarea.style.display = 'none';
@@ -68,25 +66,12 @@ const createSlideSection = (content) => {
     return section;
 };
 
-const processMarkdownManually = () => {
-    const markdownSections = document.querySelectorAll('[data-markdown]');
-    markdownSections.forEach(section => {
-        const template = section.querySelector('textarea[data-template]');
-        if (template) {
-            const markdown = template.textContent;
-            const html = marked(markdown); // Make sure you've included the 'marked' library
-            section.innerHTML = html;
-        }
-    });
-};
-
-const initMarkdown = async () => {
+const initMarkdown = async (markdownFile) => {
     const markdownSection = document.getElementById('markdown-section');
     if (!markdownSection) {
         console.error('Could not find #markdown-section element');
         return;
     }
-    const markdownFile = markdownSection.getAttribute('markdown');
     
     console.log('Loading markdown file:', markdownFile);
     const rawMarkdown = await loadMarkdownFile(markdownFile, { initialDir: '.' });
@@ -113,7 +98,6 @@ const initMarkdown = async () => {
 
         horizontalSlides.forEach((slideContent, slideIndex) => {
             console.log(`Creating slide ${slideIndex + 1} in section ${index + 1}`);
-            console.log(`Slide content: ${slideContent.substring(0, 100)}...`); // Log the first 100 characters of each slide
             verticalSlideSection.appendChild(createSlideSection(slideContent.trim()));
         });
 
@@ -132,35 +116,15 @@ const initMarkdown = async () => {
         minScale: 1,
         maxScale: 1
     }).then(() => {
-        // Process markdown manually
-        const markdownPlugin = Reveal.getPlugin('markdown');
-        if (markdownPlugin && typeof markdownPlugin.processSlides === 'function') {
-            return markdownPlugin.processSlides(document.querySelectorAll('.slides section'));
-        } else {
-            console.warn('Markdown plugin not found or processSlides is not a function');
-        }
-    }).then(() => {
         Reveal.layout();
-        console.log('Reveal.js layout updated and markdown processed');
+        console.log('Reveal.js initialization complete');
     }).catch(error => {
         console.error('Error during Reveal.js initialization:', error);
     });
-
-    console.log('Reveal.js initialization complete');
-
-    setTimeout(() => {
-        processMarkdownManually();
-        Reveal.layout();
-        console.log('Manual markdown processing complete');
-    }, 2000);
-    
-    setTimeout(() => {
-        const slides = document.querySelectorAll('.slides section');
-        slides.forEach((slide, index) => {
-            console.log(`Slide ${index + 1} processed content:`, slide.innerHTML.substring(0, 100));
-        });
-    }, 2000);
-
 };
 
-document.addEventListener('DOMContentLoaded', initMarkdown);
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const markdownFile = urlParams.get('markdown') || 'index.md';
+    initMarkdown(markdownFile);
+});
