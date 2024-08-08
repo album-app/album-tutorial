@@ -1,23 +1,30 @@
 <!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Album Setup Tutorial</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/night.css" id="theme">
-    <link rel="stylesheet" href="css/custom.css">
-</head>
-<body>
-    <div class="reveal">
-        <div class="slides">
-            <section data-markdown="cryoet_tutorial.md" data-separator="^---$" data-separator-vertical="^--$" id="markdown-section">
-            </section>
-        </div>
-    </div>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <script src="js/reveal.js"></script>
-    <script src="plugin/markdown/markdown.js"></script>
-    <script src="js/loadMarkdown.js"></script>
-</body>
+        <title>Cryo-ET Album Tutorial</title>
+
+        <link rel="stylesheet" href="dist/reset.css">
+        <link rel="stylesheet" href="dist/reveal.css">
+        <link rel="stylesheet" href="dist/theme/black.css">
+
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="plugin/highlight/monokai.css">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section id="markdown-section" markdown="cryoet_tutorial.md" data-separator="^---$" data-separator-vertical="^--$">
+                </section>
+            </div>
+        </div>
+
+        <script src="dist/reveal.js"></script>
+        <script src="plugin/notes/notes.js"></script>
+        <script src="plugin/markdown/markdown.js"></script>
+        <script src="plugin/highlight/highlight.js"></script>
+        <script src="loadMarkdown.js"></script>
+    </body>
 </html>

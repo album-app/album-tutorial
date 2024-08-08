@@ -36,10 +36,11 @@ const loadAndProcessMarkdown = async (url, options) => {
 };
 
 const initMarkdown = async () => {
-    const markdownContent = await loadAndProcessMarkdown('index.md', { initialDir: '.' });
-    const section = document.getElementById('markdown-section');
-    section.setAttribute('data-markdown', '');
-    section.innerHTML = markdownContent;
+    const markdownSection = document.getElementById('markdown-section');
+    const markdownFile = markdownSection.getAttribute('markdown');
+    const markdownContent = await loadAndProcessMarkdown(markdownFile, { initialDir: '.' });
+    markdownSection.setAttribute('data-markdown', '');
+    markdownSection.innerHTML = markdownContent;
 
     // Initialize Reveal.js after setting the content
     Reveal.initialize({
