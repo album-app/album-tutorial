@@ -1,12 +1,16 @@
-## Welcome to the Album Setup Tutorial
+## Welcome to the Album Setup Tutorial for Cryo-ET applications
 
 This tutorial will guide you through setting up Album on your machine.
 
-Originally by Kyle Harrington and Zhuowen (Kevin) Zhao
+<add a cryoET picture>
+
+August 14, 2024
+Kyle Harrington and Zhuowen (Kevin) Zhao
+CZ Imaging Institute
 
 ---
 
-@include[overview.md](overview.md)
+FILE: overview.md
 
 ---
 
@@ -16,8 +20,8 @@ Originally by Kyle Harrington and Zhuowen (Kevin) Zhao
 
 ---
 
-@include[installation.md](installation.md)
+FILE: installation.md
 
 ---
 
-@include[resources.md](resources.md)
+FILE: resources.md
