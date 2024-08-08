@@ -12,4 +12,8 @@ FILE: installation.md
 
 ---
 
+FILE: tutorials.md
+
+---
+
 FILE: resources.md
