@@ -60,8 +60,24 @@ const createSlideSection = (content) => {
     section.setAttribute('data-markdown', '');
     section.style.minHeight = '100px';
     section.style.border = '1px solid red';
-    section.innerHTML = content || 'Default Slide Content';
+    const textarea = document.createElement('textarea');
+    textarea.setAttribute('data-template', '');
+    textarea.style.display = 'none';
+    textarea.textContent = content || 'Default Slide Content';
+    section.appendChild(textarea);
     return section;
+};
+
+const processMarkdownManually = () => {
+    const markdownSections = document.querySelectorAll('[data-markdown]');
+    markdownSections.forEach(section => {
+        const template = section.querySelector('textarea[data-template]');
+        if (template) {
+            const markdown = template.textContent;
+            const html = marked(markdown); // Make sure you've included the 'marked' library
+            section.innerHTML = html;
+        }
+    });
 };
 
 const initMarkdown = async () => {
@@ -116,14 +132,28 @@ const initMarkdown = async () => {
         minScale: 1,
         maxScale: 1
     }).then(() => {
-        return Reveal.getPlugins().markdown.processSlides(document.querySelectorAll('.slides section'));
+        // Process markdown manually
+        const markdownPlugin = Reveal.getPlugin('markdown');
+        if (markdownPlugin && typeof markdownPlugin.processSlides === 'function') {
+            return markdownPlugin.processSlides(document.querySelectorAll('.slides section'));
+        } else {
+            console.warn('Markdown plugin not found or processSlides is not a function');
+        }
     }).then(() => {
         Reveal.layout();
         console.log('Reveal.js layout updated and markdown processed');
+    }).catch(error => {
+        console.error('Error during Reveal.js initialization:', error);
     });
 
     console.log('Reveal.js initialization complete');
 
+    setTimeout(() => {
+        processMarkdownManually();
+        Reveal.layout();
+        console.log('Manual markdown processing complete');
+    }, 2000);
+    
     setTimeout(() => {
         const slides = document.querySelectorAll('.slides section');
         slides.forEach((slide, index) => {

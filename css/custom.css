@@ -31,5 +31,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    visibility: visible !important;
+    opacity: 1 !important;    
     border: 1px solid blue; /* This is for debugging, remove after fixing */
 }
