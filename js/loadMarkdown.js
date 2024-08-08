@@ -2,11 +2,18 @@ const FILE_REF_REGEX = /^FILE: (.+)$/;
 const isFileReference = (line) => FILE_REF_REGEX.test(line);
 
 const loadFileContent = async (filePath) => {
-    const response = await fetch(filePath);
-    if (!response.ok) {
-        throw new Error(`Failed to load ${filePath}`);
+    try {
+        const response = await fetch(filePath);
+        if (!response.ok) {
+            throw new Error(`Failed to load ${filePath}`);
+        }
+        const text = await response.text();
+        console.log(`Loaded content from ${filePath}:`, text);
+        return text;
+    } catch (error) {
+        console.error(`Error loading file content from ${filePath}:`, error);
+        return '';
     }
-    return await response.text();
 };
 
 const preprocess = async (markdown, options) => {
@@ -27,8 +34,9 @@ const loadMarkdownFile = async (url, options) => {
         if (!response.ok) {
             throw new Error(`Failed to load ${url}`);
         }
-        let markdown = await response.text();
-        markdown = await preprocess(markdown, options);
+        const text = await response.text();
+        console.log(`Loaded markdown file from ${url}:`, text);
+        const markdown = await preprocess(text, options);
         return markdown;
     } catch (error) {
         console.error('Error loading markdown file:', error);
