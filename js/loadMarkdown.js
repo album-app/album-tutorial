@@ -77,8 +77,11 @@ const initMarkdown = async () => {
     if (!rawMarkdown) return;
 
     const processedMarkdown = await processMarkdown(rawMarkdown, { initialDir: '.' });
-    
-    // Split into vertical slides
+
+    // Clear existing content
+    markdownSection.innerHTML = '';
+
+    // Split into vertical sections
     const verticalSections = processedMarkdown.split(/^---$/m);
     
     verticalSections.forEach(verticalSection => {
