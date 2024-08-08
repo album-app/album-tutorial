@@ -92,15 +92,8 @@ const initMarkdown = async (markdownFile) => {
     
     verticalSections.forEach((verticalSection, index) => {
         console.log(`Processing vertical section ${index + 1}`);
-        const horizontalSlides = verticalSection.split(/^--$/m);
-        console.log(`Number of horizontal slides in section ${index + 1}:`, horizontalSlides.length);
         const verticalSlideSection = document.createElement('section');
-
-        horizontalSlides.forEach((slideContent, slideIndex) => {
-            console.log(`Creating slide ${slideIndex + 1} in section ${index + 1}`);
-            verticalSlideSection.appendChild(createSlideSection(slideContent.trim()));
-        });
-
+        verticalSlideSection.appendChild(createSlideSection(verticalSection.trim()));
         markdownSection.appendChild(verticalSlideSection);
     });
 
