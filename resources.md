@@ -8,7 +8,7 @@ Explore other catalogs:
 - [Helmholtz Imaging catalog](https://album-app.gitlab.io/catalogs/helmholtz-imaging/catalog)
 - [Image Challenges](https://album-app.gitlab.io/catalogs/image-challenges/catalog)
 
----
+--
 
 ### More Resources
 

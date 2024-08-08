@@ -14,7 +14,13 @@ FILE: overview.md
 
 ---
 
-FILE: ../installation.md
+### Getting started
+
+Please check out the [album overview slides](https://album-app.github.io/album-tutorial) which include installation instructions.
+
+---
+
+FILE: napari-copick.md
 
 ---
 
