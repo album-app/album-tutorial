@@ -1,34 +1,12 @@
-const FILE_REF_REGEX = /^FILE: (.+)$/;
-
-const isFileReference = (line) => FILE_REF_REGEX.test(line);
-const loadFileContent = async (filePath) => {
-    const response = await fetch(filePath);
-    if (!response.ok) {
-        throw new Error(`Failed to load ${filePath}`);
-    }
-    return await response.text();
-};
-
-const preprocess = async (markdown, options) => {
-    const lines = markdown.split('\n');
-    const processedLines = await Promise.all(lines.map(async (line) => {
-        if (isFileReference(line)) {
-            const filePath = line.match(FILE_REF_REGEX)[1];
-            return await loadFileContent(`${options.initialDir}/${filePath}`);
-        }
-        return line;
-    }));
-    return processedLines.join('\n');
-};
-
-const loadAndProcessMarkdown = async (url, options) => {
+const loadAndProcessMarkdown = async (url) => {
     try {
+        console.log('Attempting to load markdown from:', url);
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error(`Failed to load ${url}`);
         }
         let markdown = await response.text();
-        markdown = await preprocess(markdown, options);
+        console.log('Markdown content loaded:', markdown.substring(0, 100) + '...');
         return markdown;
     } catch (error) {
         console.error('Error loading and processing markdown:', error);
@@ -36,19 +14,37 @@ const loadAndProcessMarkdown = async (url, options) => {
 };
 
 const initMarkdown = async () => {
+    console.log('initMarkdown function called');
     const markdownSection = document.getElementById('markdown-section');
+    if (!markdownSection) {
+        console.error('Could not find #markdown-section element');
+        return;
+    }
     const markdownFile = markdownSection.getAttribute('markdown');
-    const markdownContent = await loadAndProcessMarkdown(markdownFile, { initialDir: '.' });
-    markdownSection.setAttribute('data-markdown', '');
-    markdownSection.innerHTML = markdownContent;
-
-    // Initialize Reveal.js after setting the content
-    Reveal.initialize({
-        plugins: [ RevealMarkdown ],
-        markdown: {
-            smartypants: true
-        }
-    });
+    console.log('Markdown file to load:', markdownFile);
+    
+    const markdownContent = await loadAndProcessMarkdown(markdownFile);
+    if (markdownContent) {
+        markdownSection.innerHTML = markdownContent;
+        console.log('Markdown content set to innerHTML');
+        
+        // Initialize Reveal.js after setting the content
+        Reveal.initialize({
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+            markdown: {
+                smartypants: true
+            }
+        }).then(() => {
+            console.log('Reveal.js initialized');
+        }).catch(error => {
+            console.error('Error initializing Reveal.js:', error);
+        });
+    } else {
+        console.error('No markdown content loaded');
+    }
 };
 
-document.addEventListener('DOMContentLoaded', initMarkdown);
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOMContentLoaded event fired');
+    initMarkdown();
+});
