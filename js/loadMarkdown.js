@@ -7,6 +7,18 @@ const loadAndProcessMarkdown = async (url) => {
         }
         let markdown = await response.text();
         console.log('Markdown content loaded:', markdown.substring(0, 100) + '...');
+
+        // Process FILE: references
+        const lines = markdown.split('\n');
+        for (let i = 0; i < lines.length; i++) {
+            if (lines[i].trim().startsWith('FILE:')) {
+                const fileName = lines[i].trim().split('FILE:')[1].trim();
+                const fileContent = await loadAndProcessMarkdown(fileName);
+                lines[i] = fileContent;
+            }
+        }
+        markdown = lines.join('\n');
+
         return markdown;
     } catch (error) {
         console.error('Error loading and processing markdown:', error);
@@ -45,7 +57,6 @@ const initMarkdown = async () => {
         console.error('No markdown content loaded');
     }
 };
-
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOMContentLoaded event fired');
