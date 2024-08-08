@@ -28,21 +28,24 @@ const initMarkdown = async () => {
         markdownSection.innerHTML = markdownContent;
         console.log('Markdown content set to innerHTML');
         
-        // Initialize Reveal.js after setting the content
-        Reveal.initialize({
-            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
-            markdown: {
-                smartypants: true
-            }
-        }).then(() => {
-            console.log('Reveal.js initialized');
-        }).catch(error => {
-            console.error('Error initializing Reveal.js:', error);
-        });
+        // Use setTimeout to delay Reveal.js initialization
+        setTimeout(() => {
+            Reveal.initialize({
+                plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+                markdown: {
+                    smartypants: true
+                }
+            }).then(() => {
+                console.log('Reveal.js initialized');
+            }).catch(error => {
+                console.error('Error initializing Reveal.js:', error);
+            });
+        }, 100); // Small delay to ensure DOM is updated
     } else {
         console.error('No markdown content loaded');
     }
 };
+
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOMContentLoaded event fired');
