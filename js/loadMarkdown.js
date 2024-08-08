@@ -13,6 +13,25 @@ const loadAndProcessMarkdown = async (url) => {
     }
 };
 
+const initReveal = () => {
+    if (typeof Reveal !== 'undefined') {
+        console.log('Initializing Reveal.js');
+        Reveal.initialize({
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+            markdown: {
+                smartypants: true
+            }
+        }).then(() => {
+            console.log('Reveal.js initialized successfully');
+        }).catch(error => {
+            console.error('Error initializing Reveal.js:', error);
+        });
+    } else {
+        console.log('Reveal.js not loaded yet, retrying in 100ms');
+        setTimeout(initReveal, 100);
+    }
+};
+
 const initMarkdown = async () => {
     console.log('initMarkdown function called');
     const markdownSection = document.getElementById('markdown-section');
@@ -29,16 +48,7 @@ const initMarkdown = async () => {
         console.log('Markdown content set to innerHTML');
         
         // Initialize Reveal.js after setting the content
-        Reveal.initialize({
-            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
-            markdown: {
-                smartypants: true
-            }
-        }).then(() => {
-            console.log('Reveal.js initialized');
-        }).catch(error => {
-            console.error('Error initializing Reveal.js:', error);
-        });
+        initReveal();
     } else {
         console.error('No markdown content loaded');
     }
