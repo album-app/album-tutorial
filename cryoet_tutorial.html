@@ -14,12 +14,11 @@
         <link rel="stylesheet" href="plugin/highlight/monokai.css">
     </head>
     <body>
-        <div class="reveal">
-            <div class="slides">
-                <section id="markdown-section" markdown="cryoet_tutorial.md" data-separator="^---$" data-separator-vertical="^--$">
-                </section>
-            </div>
+      <div class="reveal">
+        <div class="slides">
+          <section id="markdown-section"></section>
         </div>
+      </div>
 
         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
         <script src="js/reveal.js"></script>
@@ -27,5 +26,10 @@
         <script src="plugin/markdown/markdown.js"></script>
         <script src="plugin/highlight/highlight.js"></script>
         <script src="js/loadMarkdown.js"></script>
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+              initMarkdown('cryoet_tutorial.md');
+          });
+        </script>
     </body>
 </html>
