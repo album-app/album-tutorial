@@ -18,6 +18,10 @@ FILE: overview.md
 
 Please check out the [album overview slides](https://album-app.github.io/album-tutorial) which include installation instructions.
 
+Or, you can access a pre-installed album environment on Bruno
+
+FILE: bruno-env.md
+
 ---
 
 FILE: napari-copick.md
