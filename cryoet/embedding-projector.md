@@ -7,7 +7,7 @@ instructions](https://album.solutions/guide?catalog_url=https://github.com/cellc
 
 --
 
-### Running napari-copick
+### Running embedding-projector
 
 You can then run 
 
