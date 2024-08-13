@@ -14,6 +14,7 @@ You can then run
 ```
 album run cellcanvas:embedding-projector:0.0.2 --embeddings embedding_store_path --labels label_store_path
 ```
-
-![Trained on Polnet tomograms](./figures/old-embedding.png)
-![Trained on Polnet and curated tomograms](./figures/new-embedding.png)
+<section>
+    ![Trained on Polnet tomograms](./figures/old-embedding.png)
+    ![Trained on Polnet and curated tomograms](./figures/new-embedding.png)
+</section>
