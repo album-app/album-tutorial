@@ -30,4 +30,8 @@ FILE: napari-copick.md
 
 ---
 
+FILE: embedding-projector.md
+
+---
+
 FILE: ../resources.md
