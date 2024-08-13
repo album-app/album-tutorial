@@ -11,7 +11,7 @@ instructions](https://album.solutions/guide?catalog_url=https://github.com/cellc
 
 You can then run 
 
-```
+```sh
 album run cellcanvas:embedding-projector:0.0.2 --embeddings embedding_store_path --labels label_store_path
 ```
 <section>
