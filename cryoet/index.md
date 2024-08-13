@@ -14,11 +14,7 @@ FILE: overview.md
 
 ---
 
-### Getting started
-
-Please check out the [album overview slides](https://album-app.github.io/album-tutorial) which include installation instructions.
-
-Or, you can access a pre-installed album environment on Bruno (next slide).
+FILE: getting-started.md
 
 ---
 

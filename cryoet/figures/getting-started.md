@@ -1,6 +1,13 @@
+### Getting started
+
+Please check out the [album overview slides](https://album-app.github.io/album-tutorial) which include installation instructions.
+
+Or, you can access a pre-installed album environment on Bruno (🔽).
+
+
 ### Access a pre-setup album environment on Bruno
 
-1. After login a shell, load the system anaconda:     
+1. Login Bruno, and load the system anaconda:     
 ```sh 
 ml anaconda
 ```  
@@ -15,4 +22,3 @@ conda activate /hpc/projects/group.czii/krios1.processing/software/album
 4. (Optional) Remove the path:     
 ```sh
 unset ALBUM_BASE_CACHE_PATH
-```
