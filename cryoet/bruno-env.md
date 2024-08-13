@@ -1,9 +1,9 @@
 ### Access a pre-setup album environment on Bruno
 
-1. After login a shell, load the system anaconda:    
+1. After login a shell, load the system anaconda:     
 ```sh 
 ml anaconda
-```
+```  
 2. Export the base album path:    
 ```sh 
 export ALBUM_BASE_CACHE_PATH=/hpc/projects/group.czii/krios1.processing/software/album/.album
