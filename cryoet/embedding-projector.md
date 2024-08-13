@@ -8,8 +8,6 @@ instructions](https://album.solutions/guide?catalog_url=https://github.com/cellc
 --
 
 ### Running embedding-projector
-You can run 
-
 ```sh
 album run cellcanvas:embedding-projector:0.0.2 \
     --embeddings embedding_store_path \
