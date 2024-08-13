@@ -18,10 +18,6 @@ FILE: getting-started.md
 
 ---
 
-FILE: bruno-env.md
-
----
-
 FILE: napari-copick.md
 
 ---

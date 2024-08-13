@@ -4,6 +4,7 @@ Please check out the [album overview slides](https://album-app.github.io/album-t
 
 Or, you can access a pre-installed album environment on Bruno (🔽).
 
+--
 
 ### Access a pre-setup album environment on Bruno
 
