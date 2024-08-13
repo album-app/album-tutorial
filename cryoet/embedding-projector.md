@@ -8,13 +8,14 @@ instructions](https://album.solutions/guide?catalog_url=https://github.com/cellc
 --
 
 ### Running embedding-projector
-
-You can then run 
+You can run 
 
 ```sh
-album run cellcanvas:embedding-projector:0.0.2 --embeddings embedding_store_path --labels label_store_path
+album run cellcanvas:embedding-projector:0.0.2 \
+    --embeddings embedding_store_path \
+    --labels label_store_path
 ```
-<section>
-    ![Trained on Polnet tomograms](./figures/old-embedding.png)
-    ![Trained on Polnet and curated tomograms](./figures/new-embedding.png)
-</section>
+
+![Trained on Polnet tomograms](./figures/old-embedding.png)
+![Trained on Polnet and curated tomograms](./figures/new-embedding.png)
+
