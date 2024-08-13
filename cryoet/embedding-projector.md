@@ -16,6 +16,5 @@ album run cellcanvas:embedding-projector:0.0.2 \
     --labels label_store_path
 ```
 
-![Trained on Polnet tomograms](./figures/old-embedding.png)
-![Trained on Polnet and curated tomograms](./figures/new-embedding.png)
+![swin-unetr](./figures/embedding-3d-projection.png)
 
