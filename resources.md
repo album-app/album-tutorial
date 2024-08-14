@@ -4,6 +4,8 @@ Explore other catalogs:
 
 - [copick](https://copick.github.io/copick-catalog/catalog)
 - [cellcanvas](https://album.cellcanvas.org/catalog)
+- [tomoteam](https://kephale.github.io/tomoteam-catalog/) [temporary:
+  looking for home]
 - [Kyle's cold storage](https://cold-storage.kyleharrington.com/catalog)
 - [Helmholtz Imaging catalog](https://album-app.gitlab.io/catalogs/helmholtz-imaging/catalog)
 - [Image Challenges](https://album-app.gitlab.io/catalogs/image-challenges/catalog)

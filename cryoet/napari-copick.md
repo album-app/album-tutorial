@@ -14,12 +14,9 @@ See the instructions on [this
 page](https://copick.github.io/copick/examples/tutorials/album/) for
 creating your copick project.
 
-TODO: add instructions for making a copick project
-
-You can also create a local copy of a dataset from the data portal
-with [this
-solution](https://album.cellcanvas.org/copick/project_from_dataportal/0.1.11). You
-might want to do this to speed up image viewing.
+You can also use album solutions to create a copick project:
+- [From a directory of MRCs](https://copick.github.io/copick-catalog/copick/setup_local_project/0.15.1)
+- [By downloading from the CZ CryoET Data Portal](https://album.cellcanvas.org/copick/project_from_dataportal/0.1.11)
 
 --
 
