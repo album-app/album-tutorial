@@ -28,7 +28,8 @@ setup(
     dependencies={
         "environment_file": env_file
     },
-)```
+)
+```
 <!-- END GITHUB_CODE -->
 
 ---
@@ -55,7 +56,8 @@ setup(
             "name": "copick-monai",
             "version": "0.0.2"
         }
-    }```
+    }
+```
 <!-- END GITHUB_CODE -->
 
 
