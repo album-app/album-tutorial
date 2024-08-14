@@ -4,7 +4,7 @@
 
 ## An example solution
 
-<!-- GITHUB_CODE: https://raw.githubusercontent.com/cellcanvas/album-catalog/main/solutions/cellcanvas/generate-pixel-embedding/solution.py#L20-L30 -->
+<!-- GITHUB_CODE: https://raw.githubusercontent.com/cellcanvas/album-catalog/main/solutions/cellcanvas/generate-pixel-embedding/solution.py#L175-L197 -->
 ```python
   - monai
   - qtpy
