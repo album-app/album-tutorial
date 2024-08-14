@@ -18,6 +18,11 @@ def replace_placeholders(md_file):
     pattern = r'<!-- GITHUB_CODE: (https://raw.githubusercontent.com/.+?\.py)#L(\d+)-L(\d+) -->'
     matches = re.findall(pattern, content)
 
+    if matches:
+        print(f"Found {len(matches)} matches in {md_file}")
+    else:
+        print(f"No matches found in {md_file}")
+
     for match in matches:
         url, start_line, end_line = match
         start_line = int(start_line)
