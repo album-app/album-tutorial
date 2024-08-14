@@ -18,7 +18,7 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Install requests library
+    - name: Install dependencies
       run: pip install requests
 
     - name: Preprocess All Markdown Files
@@ -31,3 +31,4 @@ jobs:
         git add .
         git commit -m "Automated code embedding in all markdown files"
         git push
+      continue-on-error: true

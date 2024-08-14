@@ -1,51 +1,62 @@
-import requests
-import re
 import os
+import glob
+import requests
 
-def fetch_github_code(url, start_line=None, end_line=None):
-    response = requests.get(url)
-    response.raise_for_status()
-    lines = response.text.splitlines()
-    if start_line and end_line:
-        return '\n'.join(lines[start_line-1:end_line])
-    return '\n'.join(lines)
-
-def replace_placeholders(md_file):
-    with open(md_file, 'r') as file:
-        content = file.read()
-
-    # Regex to find all placeholders with GITHUB_CODE pattern
-    pattern = r'<!-- GITHUB_CODE: (https://raw.githubusercontent.com/.+?\.py)#L(\d+)-L(\d+) -->'
-    matches = re.findall(pattern, content)
-
-    if matches:
-        print(f"Found {len(matches)} matches in {md_file}")
+def fetch_github_code(url):
+    # Extract line number range from the URL if present
+    if "#L" in url:
+        base_url, line_info = url.split("#L")
+        line_range = line_info.split('-')
+        start_line = int(line_range[0])
+        end_line = int(line_range[1][1:]) if len(line_range) > 1 else start_line
     else:
-        print(f"No matches found in {md_file}")
+        base_url = url
+        start_line, end_line = None, None
 
-    for match in matches:
-        url, start_line, end_line = match
-        start_line = int(start_line)
-        end_line = int(end_line)
-        code = fetch_github_code(url, start_line=start_line, end_line=end_line)
+    response = requests.get(base_url)
+    if response.status_code == 200:
+        code_lines = response.text.splitlines()
+        if start_line and end_line:
+            # Adjust for 0-based indexing in Python
+            return "\n".join(code_lines[start_line-1:end_line])
+        else:
+            return response.text
+    else:
+        raise Exception(f"Failed to fetch code from GitHub. Status code: {response.status_code}")
 
-        # Replace the placeholder with the fetched code
-        replacement_block = f'```python\n{code}\n```'
-        content = re.sub(f'```python\n<!-- GITHUB_CODE: {url}#L{start_line}-L{end_line} -->\n```',
-                         f'```python\n{code}\n```',
-                         content)
+def replace_github_code_block(file_path):
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
 
-    with open(md_file, 'w') as file:
-        file.write(content)
+    new_lines = []
+    inside_code_block = False
 
-def process_all_markdown_files():
-    # Walk through all directories and subdirectories
-    for root, dirs, files in os.walk("."):
-        for file in files:
-            if file.endswith(".md"):
-                md_file_path = os.path.join(root, file)
-                print(f"Processing {md_file_path}")
-                replace_placeholders(md_file_path)
+    for line in lines:
+        if '<!-- GITHUB_CODE:' in line:
+            inside_code_block = True
+            url = line.split('<!-- GITHUB_CODE: ')[1].split(' -->')[0].strip()
+            code = fetch_github_code(url)
+            new_lines.append(line)
+            new_lines.append("```python\n")
+            new_lines.extend(code.splitlines(True))
+            new_lines.append("```\n")
+        elif '<!-- END GITHUB_CODE -->' in line:
+            inside_code_block = False
+            new_lines.append(line)
+        elif not inside_code_block:
+            new_lines.append(line)
+
+    with open(file_path, 'w') as file:
+        file.writelines(new_lines)
+
+def process_directory(directory):
+    # Use glob to find all .md files recursively
+    md_files = glob.glob(os.path.join(directory, '**', '*.md'), recursive=True)
+
+    for md_file in md_files:
+        print(f"Processing file: {md_file}")
+        replace_github_code_block(md_file)
 
 if __name__ == "__main__":
-    process_all_markdown_files()
+    directory = '.'  # Directory to start the search from (current directory by default)
+    process_directory(directory)
