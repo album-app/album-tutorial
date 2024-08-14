@@ -2,7 +2,7 @@
 
 This tutorial will guide you through setting up Album on your machine.
 
-![Example cryoet image from CZ CryoET data portal](figures/index_img.png)
+![Example cryoet image from CZ CryoET data portal](figures/index_img_resized.png)
 
 Image from https://cryoetdataportal.czscience.com/runs/15936
 
