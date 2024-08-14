@@ -45,6 +45,7 @@ Some strategies for accelerating album solution development!
   data)
 - Check out a [minimal album server
   solution](https://album.cellcanvas.org/album/server/0.0.2)
+- Connecting to a minimal album server [from napari](https://github.com/kephale/napari-album/blob/main/src/napari_album/widget.py)
 - Check out a more [advanced album customized server](https://album.cellcanvas.org/cellcanvas/server/0.0.12)
 
 --
