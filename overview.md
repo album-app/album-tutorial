@@ -12,7 +12,7 @@ More info [on the web](https://album.solutions/)
 
 ### An example solution
 
-
+solution page
 
 --
 
