@@ -3,10 +3,13 @@
 ```
 usage: album [-h] [--log LOG] [--json] [--version]
 
-{add-catalog,clone,deploy,index,info,install,remove-catalog,repl,run,search,test,undeploy,uninstall,update,upgrade} ...
+{add-catalog,clone,deploy,index,info,install,remove-catalog,repl,
+run,search,test,undeploy,uninstall,update,upgrade} ...
 
 album for running, building, and deploying computational solutions
 ```
+
+![album GUI screenshot](img/album_gui.png)
 
 --
 
