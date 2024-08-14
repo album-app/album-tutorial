@@ -1,4 +1,4 @@
-## Welcome to the Album Setup Tutorial for Cryo-ET applications
+### Welcome to the Album Setup Tutorial for Cryo-ET applications
 
 This tutorial will guide you through setting up Album on your machine.
 
