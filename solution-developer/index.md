@@ -72,6 +72,10 @@ Some strategies for accelerating album solution development!
 - This convention is used to support 1-click deployments of solutions.
 
 <!-- GITHUB_CODE: https://raw.githubusercontent.com/cellcanvas/album-catalog/main/solutions/kephale/train-unet-copick/solution.py#L1-L2 -->
+```python
+###album catalog: cellcanvas
+
+```
 <!-- END GITHUB_CODE -->
 
 ---
