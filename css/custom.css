@@ -5,21 +5,21 @@
 }
 
 .reveal h1 {
-    font-size: 2em; /* Adjusted size */
+    font-size: 1.8em; /* Reduced from 2em */
 }
 
 .reveal h2 {
-    font-size: 1.75em; /* Adjusted size */
+    font-size: 1.5em; /* Reduced from 1.75em */
 }
 
 .reveal h3 {
-    font-size: 1.5em; /* Adjusted size */
+    font-size: 1.3em; /* Reduced from 1.5em */
 }
 
 .reveal p, .reveal li {
-    font-size: 1em; /* Adjusted size */
+    font-size: 1em;
 }
 
 .reveal pre code {
-    font-size: 0.9em; /* Adjusted size */
+    font-size: 0.9em;
 }
