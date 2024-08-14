@@ -51,7 +51,7 @@ matching](https://cold-storage.kyleharrington.com/pytme/preprocess/0.0.2),
 
 - [copick](https://copick.github.io/copick-catalog/catalog)
 - [cellcanvas](https://album.cellcanvas.org/)
-- [tomoteam](https://kephale.github.io/tomoteam-catalog/) [temporary:
+- [tomoteam](https://github.com/kephale/tomoteam-catalog/) [temporary:
   looking for home]
 - [Kyle Harrington's cold-storage](https://cold-storage.kyleharrington.com)
 
