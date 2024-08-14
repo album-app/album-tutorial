@@ -40,7 +40,7 @@ def replace_github_code_block(file_path):
             new_lines.append(line)
             new_lines.append("```python\n")
             new_lines.extend(code.splitlines(True))
-            new_lines.append("```\n")
+            new_lines.append("\n```\n")
         elif '<!-- END GITHUB_CODE -->' in line:
             inside_code_block = False
             new_lines.append(line)
