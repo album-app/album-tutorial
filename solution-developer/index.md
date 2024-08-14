@@ -36,6 +36,8 @@ setup(
 
 # Tips and tricks!
 
+Some strategies for accelerating album solution development!
+
 --
 
 ### Parent solutions
