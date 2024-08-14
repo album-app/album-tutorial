@@ -1,7 +1,9 @@
 ### album usage
 
 ```
-usage: album [-h] [--log LOG] [--json] [--version] {add-catalog,clone,deploy,index,info,install,remove-catalog,repl,run,search,test,undeploy,uninstall,update,upgrade} ...
+usage: album [-h] [--log LOG] [--json] [--version]
+
+{add-catalog,clone,deploy,index,info,install,remove-catalog,repl,run,search,test,undeploy,uninstall,update,upgrade} ...
 
 album for running, building, and deploying computational solutions
 ```
@@ -11,7 +13,6 @@ album for running, building, and deploying computational solutions
 ### album actions
 
  ```
- {add-catalog,clone,deploy,index,info,install,remove-catalog,repl,run,search,test,undeploy,uninstall,update,upgrade}
                         sub-command help
     add-catalog         add a catalog to your local album configuration file.
     clone               clone an album solution or catalog template.
