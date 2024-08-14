@@ -1,5 +1,3 @@
---
-
 ### What is the Slurm Album Job Array Solution?
 
 Solution available [here](https://album.cellcanvas.org/copick/submit-album-job-array/0.0.13)
