@@ -27,3 +27,27 @@ More info [on the web](https://album.solutions/)
 - When you're done developing your software with album, you might not need it anymore!
 
 More info [on the web](https://album.solutions/)
+
+-- 
+
+### Scientific Software Lifecycle
+
+Idea
+- Formulate a hypothesis or identify a problem to solve.
+
+Prototype/Script
+- current: Develop an initial prototype or script to test the idea.
+- album: Make your tool broadly useful at this stage with reusable solutions.
+
+Make tool usable
+- current: build/install tool on multiple systems
+- album: Use solution from catalog on multiple systems
+
+Do something publishable
+- current: Build and run a workflow for scientific problem
+- album: Use solution in a reusable set of solutions
+
+Release of Packaged Tool
+- current: Create a package: pypi, conda, binary install, apt/yum, Docker, etc.
+- album: Link to solution in catalog
+
