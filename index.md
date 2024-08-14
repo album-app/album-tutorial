@@ -8,6 +8,10 @@ FILE: overview.md
 
 ---
 
+FILE: lifecycle.md
+
+---
+
 FILE: installation.md
 
 ---
