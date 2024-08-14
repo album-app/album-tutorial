@@ -2,7 +2,8 @@
 
 Explore more specific and advanced album tutorials:
 
-- [Cryo-electron tomography](https://album-app.github.io/album-tutorial/cryoet/)
+- [Developing solutions](./solution-developer/)
+- [Cryo-electron tomography](./cryoet/)
 
 ---
 
