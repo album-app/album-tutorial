@@ -58,6 +58,17 @@ setup(
     }```
 <!-- END GITHUB_CODE -->
 
+--
+
+### Code editor tricks
+
+- Poke [Kyle Harrington](https://kyleharrington.com) about code editor
+  tricks for faster album development cycles
+- Why? Because sharing should be 1-click away
+- This convention is used to support 1-click deployments of solutions.
+
+<!-- GITHUB_CODE: https://raw.githubusercontent.com/cellcanvas/album-catalog/main/solutions/kephale/train-unet-copick/solution.py#L1-L2 -->
+<!-- END GITHUB_CODE -->
 
 ---
 
