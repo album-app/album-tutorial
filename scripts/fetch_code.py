@@ -24,6 +24,7 @@ def fetch_github_code(url):
     else:
         raise Exception(f"Failed to fetch code from GitHub. Status code: {response.status_code}")
 
+    
 def replace_github_code_block(file_path):
     with open(file_path, 'r') as file:
         lines = file.readlines()
