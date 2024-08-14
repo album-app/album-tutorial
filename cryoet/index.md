@@ -26,4 +26,20 @@ FILE: embedding-projector.md
 
 ---
 
+FILE: slurm-array.md
+
+---
+
+FILE: paint-from-picks.md
+
+---
+
+FILE: generate-skimage-features.md
+
+---
+
+FILE: picks-from-segmentation.md
+
+---
+
 FILE: ../resources.md
