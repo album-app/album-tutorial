@@ -20,6 +20,10 @@ FILE: installation.md
 
 ---
 
+FILE: usage.md
+
+---
+
 FILE: tutorials.md
 
 ---
