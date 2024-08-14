@@ -49,29 +49,13 @@ setup(
 
 <!-- GITHUB_CODE: https://raw.githubusercontent.com/cellcanvas/album-catalog/main/solutions/kephale/train-unet-copick/solution.py#L304-L310 -->
 ```python
-setup(
-    group="cellcanvas",
-    name="generate-pixel-embedding",
-    version="0.1.8",
-    title="Predict Tomogram Embeddings with SwinUNETR using Copick API",
-    description="Apply a SwinUNETR model to a tomogram fetched using the Copick API to produce embeddings, and save them in a Zarr.",
-    solution_creators=["Kyle Harrington"],
-    tags=["prediction", "deep learning", "cryoet", "tomogram"],
-    license="MIT",
-    album_api_version="0.5.1",
-    args=[
-        {"name": "copick_config_path", "type": "string", "required": True, "description": "Path to the Copick configuration JSON file."},
-        {"name": "run_name", "type": "string", "required": True, "description": "Name of the Copick run to process."},
-        {"name": "voxel_spacing", "type": "float", "required": True, "description": "Voxel spacing to be used."},
-        {"name": "tomo_type", "type": "string", "required": True, "description": "Type of tomogram to process."},
-        {"name": "checkpointpath", "type": "string", "required": True, "description": "Path to the checkpoint file of the trained SwinUNETR model"},
-        {"name": "embedding_name", "type": "string", "required": True, "description": "Name of the embedding to use as the feature name in Copick"},
-    ],
-    run=run,
     dependencies={
-        "environment_file": env_file
-    },
-)```
+        "parent": {
+            "group": "environments",
+            "name": "copick-monai",
+            "version": "0.0.2"
+        }
+    }```
 <!-- END GITHUB_CODE -->
 
 
