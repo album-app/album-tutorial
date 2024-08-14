@@ -1,14 +1,14 @@
 ### Welcome to the Album Setup Tutorial for Cryo-ET applications
 
-This tutorial will guide you through setting up Album on your machine.
-
 ![Example cryoet image from CZ CryoET data portal](figures/index_img_resized.png)
 
+<small>
 Image from https://cryoetdataportal.czscience.com/runs/15936
 
 August 14, 2024  
 Kyle Harrington and Zhuowen (Kevin) Zhao  
 CZ Imaging Institute
+</small>
 
 ---
 
