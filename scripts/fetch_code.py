@@ -30,11 +30,10 @@ def replace_placeholders(md_file):
         code = fetch_github_code(url, start_line=start_line, end_line=end_line)
 
         # Replace the placeholder with the fetched code
-        replacement_block = f'\n```python\n{code}\n```\n'
-        content = re.sub(f'<!-- GITHUB_CODE: {url}#L{start_line}-L{end_line} -->.*<!-- END_GITHUB_CODE -->',
-                         f'<!-- GITHUB_CODE: {url}#L{start_line}-L{end_line} -->{replacement_block}<!-- END_GITHUB_CODE -->',
-                         content,
-                         flags=re.DOTALL)
+        replacement_block = f'```python\n{code}\n```'
+        content = re.sub(f'```python\n<!-- GITHUB_CODE: {url}#L{start_line}-L{end_line} -->\n```',
+                         f'```python\n{code}\n```',
+                         content)
 
     with open(md_file, 'w') as file:
         file.write(content)
